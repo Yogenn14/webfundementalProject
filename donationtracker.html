@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Tracker</title>
+ <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body style="background-color: #F5F5F5;">
+
+
+<header>
+  <a href="index.html" class="logo">DermaGo</a>
+  <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+  <nav id="nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="donation.html">Donate</a></li>
+      <li><a href="donationtracker.html">Tracker</a></li>
+      <li><a href="blog.html">Blog</a></li>
+<li id="authLink"><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+</header>
+
+ <section class="herodt">
+    <h1>Donation Tracker</h1>
+  </section>
+
+
+ 
+<section class="contentdt">
+    <div class="carddt" style="border-left: 4px solid #27ae60;">
+      <h3>2025 Target</h3>
+      <h1>RM10,000</h1>
+      <p>Let's make it happen!</p>
+    </div>
+
+   <div class="progress-carddt" style="border-left: 4px solid #27ae60;" id="progressCard">
+  <h3>Current Progress</h3>
+  <div class="progress-detailsdt" id="raisedAmount"><strong>Raised so far:</strong> RM0</div>
+  <div class="progress-details" id="remainingAmount"><strong>Remaining:</strong> RM0</div>
+  <div class="progress-details">Help us reach the finish line and change more lives!</div>
+  <div class="barProgressdt">
+    <div class="progress-filldt" id="progressFill" style="width: 0%;">0%</div>
+  </div>
+</div>
+
+  </section>
+
+
+<section class="sectiondt achieveSection">
+  <h2>Our Impact Over the Years</h2>
+  <p class="subtitle">Percentage of goals achieved annually</p>
+  <div class="chart-container">
+    <canvas id="achievementChart"></canvas>
+  </div>
+</section>
+
+
+
+<section class="sectiondt sectionDtdiv1">
+  <h2>Where Your Money Goes</h2>
+  <div class="divideCards">
+    <div class="carddt carddtbckColor">
+      <div class="carddtImg">
+        <img src="images/education.jpeg" alt="Education" />
+        <svg class="wave" viewBox="0 0 500 50" preserveAspectRatio="none">
+          <path d="M0,0 C150,50 350,0 500,50 L500,00 L0,0 Z" style="fill:#fff;"></path>
+        </svg>
+      </div>
+      <div class="carddtInside">
+        <h3>Education</h3>
+        <div class="containerProgress">
+          <div class="progress-filldt" style="width: 40%;">40%</div>
+        </div>
+        <p>Scholarships, school supplies, and teacher training programs.</p>
+      </div>
+    </div>
+
+    <div class="carddt carddtbckColor">
+      <div class="carddtImg">
+        <img src="images/healthcare.jpg" alt="Healthcare" />
+        <svg class="wave" viewBox="0 0 500 50" preserveAspectRatio="none">
+          <path d="M0,0 C150,50 350,0 500,50 L500,00 L0,0 Z" style="fill:#fff;"></path>
+        </svg>
+      </div>
+      <div class="carddtInside">
+        <h3>Healthcare</h3>
+         <div class="containerProgress">
+          <div class="progress-filldt" style="width: 35%;">35%</div>
+        </div>
+        <p>Mobile clinics, vaccinations, and emergency medical aid.</p>
+      </div>
+    </div>
+
+    <div class="carddt carddtbckColor">
+      <div class="carddtImg">
+        <img src="images/foodshelter.jpg" alt="Food & Shelter" />
+        <svg class="wave" viewBox="0 0 500 50" preserveAspectRatio="none">
+          <path d="M0,0 C150,50 350,0 500,50 L500,00 L0,0 Z" style="fill:#fff;"></path>
+        </svg>
+      </div>
+      <div class="carddtInside">
+        <h3>Food & Shelter</h3>
+          <div class="containerProgress">
+          <div class="progress-filldt" style="width: 25%;">25%</div>
+        </div>
+        <p>Meals, clean water projects, and safe housing initiatives.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="sectiondt" style="background:#f9f9f9;">
+  <h2>Latest Contributors</h2>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr><th>Name</th><th>Date</th><th>Amount</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Aisha</td><td>07 Jun 2025</td><td>$250</td></tr>
+        <tr><td>Anne Caterine</td><td>06 Jun 2025</td><td>$75</td></tr>
+        <tr><td>Faiz</td><td>05 Jun 2025</td><td>$120</td></tr>
+        <tr><td>Thirran</td><td>04 Jun 2025</td><td>$50</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<footer>
+  &copy; DermaGo: Web Fundemental Project
+</footer>
+<script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+<script>
+  const socket = io('http://localhost:3000');
+
+socket.on('connect', () => {
+  console.log('Connected to WebSocket server');
+});
+
+socket.on('donationAdded', (data) => {
+  console.log(data.message); 
+  loadDonationProgress();   
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="chart.js"></script>
+<script src="script.js"></script>
+<script src="trackerScript.js"></script>
+<script src="fakeAuth.js"></script>
+
+</body>
+</html>

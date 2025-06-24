@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="dashboardStyle.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+ <header>
+  <a href="index.html" class="logo">DermaGo</a>
+  <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+  <nav id="nav">
+    <ul>
+       
+      <li><a href="index.html">Home</a></li>
+      <li><a href="donation.html">Donate</a></li>
+      <li><a href="donationtracker.html">Tracker</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="login.html">Logout</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <section class="herod">
+    <h1>Personal Dashboard</h1>
+  </section>
+
+  <main>
+    <div class="dashboardContainer">
+    <section class="section">
+      <div class="dashboard-card">
+    <h1 id="welcome"></h1>
+    <details class="accordion" open>
+      <summary>Profile Details</summary>
+      <div class="accordion-content">
+        <p id="dashboardName"></p>
+        <p id="dashboardEmail"></p>
+        
+      </div>
+    </details>
+
+
+    <details class="accordion">
+      <summary>Recurring Donations</summary>
+      <div class="accordion-content">
+        <p><strong>RM20/month</strong> – Medical Aid</p>
+        <button class="btn" style="background-color: green;">Update</button>
+        <button class="btn" style="background:#e74c3c; margin-left:0.5rem;">Cancel</button>
+      </div>
+    </details>
+
+    <details class="accordion">
+      <summary>Update Profile</summary>
+      <div class="accordion-content">
+        <div id="editProfileForm" style="margin-top: 16px;">
+      <form id="profileForm">
+      <label for="editName">Name:</label><br />
+      <input type="text" id="editName" name="name" required /><br />
+
+      <label for="editEmail">Email:</label><br />
+      <input type="email" id="editEmail" name="email" required /><br />
+
+      <button type="submit" class="btn" style="background-color: green;">Save</button>
+  </form>
+</div>
+      </div>
+    </details>
+  </div>
+
+        <div class="formd">
+      <h3>Make a Donation</h3>
+      <form id="donationForm">
+        <label>Donation Type:</label>
+        <select name="donationType">
+          <option value="one-time">One-Time</option>
+          <option value="monthly">Monthly</option>
+        </select>
+
+        <label>Choose Amount:</label>
+        <div class="donationOpts" id="amountBtn">
+          <button type="button" data-amount="10">$10</button>
+          <button type="button" data-amount="25">$25</button>
+          <button type="button" data-amount="50">$50</button>
+        </div>
+
+        <label>Or Enter Custom Amount ($):</label>
+        <input type="number" name="customAmnt" id="customAmnt" min="1" placeholder="Enter amount">
+
+
+        <label>Payment Method:</label>
+        <select name="paymntMtd">
+          <option value="creditCard">Credit Card</option>
+          <option value="paypal">PayPal</option>
+        </select>
+
+        <button type="submit">Donate Now</button>
+      </form>
+    </div>
+    </section>
+
+   <section class="sectiondt" style="background:#f9f9f9;">
+
+  <h2>Your Contributions</h2>
+  <hr>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr><th>Type</th><th>Date</th><th>Amount</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Aisha</td><td>07 Jun 2025</td><td>$250</td></tr>
+        <tr><td>Anne Caterine</td><td>06 Jun 2025</td><td>$75</td></tr>
+        <tr><td>Faiz</td><td>05 Jun 2025</td><td>$120</td></tr>
+        <tr><td>Thirran</td><td>04 Jun 2025</td><td>$50</td></tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+</section>
+</div>
+
+
+  </main>
+<footer>
+  &copy; DermaGo: Web Fundemental Project
+</footer>
+<script src="dashboardScript.js"></script>
+  <script>
+    function logout() {
+      alert("Logging out…");
+      window.location.href = "./index.html";
+    }
+  const buttons = document.querySelectorAll(".donationOpts button");
+  const customAmount = document.getElementById("customAmnt");
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      buttons.forEach((b) => b.classList.remove("selected"));
+      btn.classList.add("selected");
+      customAmount.value = btn.dataset.amount;
+    });
+  });
+    
+  </script>
+
+</body>
+</html>

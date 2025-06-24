@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Login</title>
+   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body class="login">
+<header>
+  <a href="index.html" class="logo">DermaGo</a>
+  <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+  <nav id="nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="donation.html">Donate</a></li>
+      <li><a href="donationtracker.html">Tracker</a></li>
+      <li><a href="blog.html">Blog</a></li>
+<li id="authLink"><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+<div class="loginDiv">
+  <section class="loginInf" aria-label="Login Features">
+    <h2>Join Us and Donate!</h2>
+    <p>Manage your donations and preferences easily.</p>
+    <ul>
+      <li>Create an account and log in securely</li>
+      <li>View your past donations</li>
+      <li>Manage your subscription preferences</li>
+      <li>Recover your password</li>
+      <li>Edit your profile anytime</li>
+    </ul>
+  </section>
+
+  <section class="loginFrm" aria-label="Login Form">
+    <h2>Login to DermaGo</h2>
+    <form id="loginForm">
+      <label for="username">Email</label>
+      <input type="text" id="email" name="email" required autocomplete="email" />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required />
+
+      <button type="submit" class="btn loginBtn">Log In</button>
+
+      <p class="signupTxt">
+        New user? <a href="signup.html">Sign up</a>
+      </p>
+        <p class="signupTxt">
+        Forgot Password? <a href="forgetPwd.html">Reset here</a>
+      </p>
+    </form>
+    
+  </section>
+
+  
+</div>
+<script src="script.js"></script>
+<script src="userscript.js"></script>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const nav = document.getElementById('nav');
+  hamburger.addEventListener('click', () => {
+    nav.classList.toggle('open');
+  });
+</script>
+<footer style="margin-top: 100px;">
+  &copy; DermaGo: Web Fundemental Project
+</footer>
+</body>
+</html>

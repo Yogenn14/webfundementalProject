@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sign Up | DermaGo</title>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="login">
+
+
+<header>
+  <a href="index.html" class="logo">DermaGo</a>
+  <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+  <nav id="nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="donation.html">Donate</a></li>
+      <li><a href="donationtracker.html">Tracker</a></li>
+      <li><a href="blog.html">Blog</a></li>
+<li id="authLink"><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+<div class="loginDiv">
+  <section class="loginInf" aria-label="Login Features">
+    <h2>Join Us and Donate!</h2>
+    <p>Manage your donations and preferences easily.</p>
+    <ul>
+      <li>Create an account and log in securely</li>
+      <li>View your past donations</li>
+      <li>Manage your subscription preferences</li>
+      <li>Recover your password</li>
+      <li>Edit your profile anytime</li>
+    </ul>
+  </section>
+
+  <section class="loginFrm" aria-label="Login Form">
+    <h2>Sign Up to DermaGo</h2>
+    <form id="signupForm">
+        <label for="fullname">Full Name</label>
+      <input type="text" id="fullname" name="fullname" required autocomplete="fullname" />
+
+
+      <label for="username">Email</label>
+      <input type="text" id="email" name="email" required autocomplete="email" />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required autocomplete="current-password" />
+
+       <label for="password">Confirm Password: </label>
+      <input type="password" id="cpassword" name="cpassword" required autocomplete="current-password" />
+
+      <button type="submit" class="btn loginBtn">Sign Up</button>
+
+      <p class="signupTxt">
+        Existing user? <a href="login.html">Log In</a>
+      </p>
+    </form>
+    
+  </section>
+
+  
+</div>
+<script src="userscript.js"></script>
+<script src="script.js"></script>
+
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const nav = document.getElementById('nav');
+  hamburger.addEventListener('click', () => {
+    nav.classList.toggle('open');
+  });
+</script>
+<footer>
+  &copy; DermaGo: Web Fundemental Project
+</footer>
+</body>
+</html>

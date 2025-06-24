@@ -1,0 +1,1126 @@
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+body {
+font-family: Arial, Helvetica, sans-serif;
+color: #222;
+line-height: 1.6;
+}
+
+a {
+color: inherit;
+text-decoration: none;
+}
+
+header {
+background: #fff;
+padding: 16px 32px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+position: sticky;
+top: 0;
+z-index: 1000;
+box-shadow: 0 2px 4px rgba(0,0,0,.05);
+}
+
+.logo {
+font-size: 24px;
+font-weight: bold;
+color: #27ae60;
+}
+
+nav ul {
+display: flex;
+gap: 24px;
+list-style: none;
+}
+
+nav a {
+font-weight: 500;
+transition: color .3s;
+}
+
+nav a:hover {
+color: #27ae60;
+}
+
+.hamburger {
+display: none;
+font-size: 24px;
+cursor: pointer;
+}
+
+@media (max-width: 768px) {
+nav {
+position: fixed;
+top: 60px; 
+right: -220px; 
+background: #fff;
+width: 220px;
+height: calc(100vh - 60px);
+flex-direction: column;
+padding: 16px;
+box-shadow: -2px 0 6px rgba(0,0,0,.05);
+transition: right .3s;
+z-index: 1100; 
+}
+
+nav.open {
+right: 0;
+}
+
+nav ul {
+flex-direction: column;
+gap: 16px;
+}
+
+.hamburger {
+display: block;
+}
+}
+
+/* Home page */
+
+.infoSection {
+padding: 60px 20px;
+background-color: #f9f9f9;
+}
+
+.infoContainer {
+display: flex;
+align-items: center;
+justify-content: space-between;
+flex-wrap: wrap;
+max-width: 1200px;
+margin: 0 auto;
+gap: 30px;
+}
+
+.infoTxt, .infoImg {
+flex: 1 1 500px;
+}
+
+.infoTxt h2 {
+font-size: 32px;
+color: #27ae60;
+margin-bottom: 15px;
+}
+
+.infoTxt p {
+font-size:16px;
+color: #444;
+line-height: 1.7;
+}
+
+.infoImg img {
+width: 100%;
+height: auto;
+border-radius: 10px;
+object-fit: cover;
+}
+
+.infoSection.reverse .infoContainer {
+flex-direction: row-reverse;
+}
+
+@media (max-width: 768px) {
+.infoSection {
+padding: 32px 16px;
+}
+
+.infoContainer {
+flex-direction: column;
+gap: 16px;
+}
+
+.infoImg img {
+width: 100%;
+height: auto;
+max-height: 250px;
+object-fit: cover;
+}
+}
+
+.hero {
+min-height: 80vh;
+background: url('images/heroimg1.jpg') center/cover no-repeat;
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+color: #fff;
+}
+
+.hero::after {
+content: "";
+position: absolute;
+inset: 0;
+background: rgba(0,0,0,.2);
+}
+
+.heroDiv {
+position: relative;
+max-width: 700px;
+padding: 32px;
+}
+
+.hero h1 {
+font-size: clamp(32px, 5vw, 3.5rem);
+margin-bottom: 16px;
+font-weight: bold;
+
+}
+
+.hero p {
+font-size: 16px;
+margin-bottom: 32px;
+font-style: italic;
+}
+
+.btnhome {
+position: relative; 
+background: #27ae60;
+color: #fff;
+padding: .75rem 24px;
+border-radius: 20px;
+transition: background-color 0.3s;
+cursor: pointer;
+z-index: 100;
+}
+
+.btnhome:hover {
+background: #219653;
+}
+
+#impact {
+padding: 4rem 32px;
+text-align: center;
+background-color: white;
+}
+
+#impact h2 {
+font-size: 40px;
+color: #27ae60;
+margin-bottom: 3rem;
+}
+
+.grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+gap: 32px;
+max-width: 1200px;
+margin: 0 auto;
+}
+
+.impCard i {
+font-size: 3rem;
+color: green;
+margin-bottom: 16px;
+}
+
+.impCard p {
+font-size: 16px;
+}
+
+#review {
+padding: 4rem 32px;
+background: #f9f9f9;
+}
+
+#review h2 {
+text-align: center;
+font-size: 40px;
+color: #27ae60;
+margin-bottom: 32px;
+}
+
+.carousel {
+position: relative;
+max-width: 1000px;
+margin: 0 auto;
+overflow: hidden;
+}
+
+.containerCarusel {
+display: flex;
+transition: transform .5s ease;
+}
+
+.reviewDiv {
+flex: 0 0 50%;
+padding: 16px;
+}
+
+@media (max-width: 600px) {
+.reviewDiv {
+flex: 0 0 100%;
+}
+}
+
+.reviewInsideDiv {
+background: #fff;
+border-radius: 6px;
+box-shadow: 0 2px 6px rgba(0,0,0,.1);
+padding: 32px;
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+}
+
+.userpic {
+width: 60px;
+height: 60px;
+border-radius: 50%;
+object-fit: cover;
+margin-bottom: .75rem;
+}
+
+.rname {
+font-weight: 600;
+margin-bottom: .5rem;
+}
+
+.rtext {
+font-size: .95rem;
+color: #555;
+}
+
+.dotcircle {
+text-align: center;
+margin-top: 16px;
+}
+
+.dotcirclesdiv {
+display: inline-block;
+width: 12px;
+height: 12px;
+margin: 0 6px;
+background-color: #ccc;
+border-radius: 50%;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+
+.dotcirclesdiv.active {
+background-color: #27ae60;
+}
+
+
+
+@media (max-width: 600px) {
+.prev {
+left: 5px;
+}
+
+.next {
+right: 5px;
+}
+}
+
+/*login page - y*/
+main {
+flex: 1;
+}
+
+body.login {
+background: url('images/login_bck.jpg') no-repeat center center/cover;
+position: relative;
+}
+
+body.login::before {
+content: "";
+position: fixed;
+inset: 0;
+background: rgba(0, 0, 0, 0.6);
+z-index: 0;
+}
+
+
+.loginInf h2 {
+font-size: 32px;
+margin-bottom: 16px;
+color: white;
+}
+
+.loginInf ul {
+margin-top: 16px;
+padding-left: 1.25rem;
+list-style: disc;
+line-height: 1.6;
+}
+
+.loginDiv {
+position: relative;
+z-index: 1;
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+justify-content: center;
+padding: 4rem 32px;
+gap: 3rem;
+max-width: 1000px;
+margin: 0 auto;
+flex-wrap: wrap;
+}
+
+.loginInf {
+flex: 1;
+background: rgba(255, 255, 255, 0.0);
+border-radius: 12px;
+color: #e0f2f1;
+padding: 3rem;
+font-size: 16px;
+line-height: 1.6;
+min-width: 300px;
+}
+
+.loginFrm {
+flex: 1;
+background: #fff;
+border-radius: 12px;
+padding: 3rem 40px;
+box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+min-width: 300px;
+}
+
+@media (max-width: 768px) {
+.loginDiv {
+flex-direction: column;
+align-items: center;
+padding: 32px 24px;
+}
+
+.loginInf {
+display: none;
+}
+
+.loginFrm {
+padding: 32px;
+width: 100%;
+max-width: 400px;
+order: 1;
+}
+}
+
+
+.loginFrm h2 {
+text-align: center;
+margin-bottom: 32px;
+color: #27ae60;
+}
+
+.loginFrm label {
+display: block;
+margin-bottom: 0.5rem;
+font-weight: 600;
+color: #444;
+}
+
+.loginFrm input {
+width: 100%;
+padding: 12px;
+margin-bottom: 24px;
+border-radius: 6px;
+border: 1.5px solid #ccc;
+transition: border-color 0.3s;
+font-size: 16px;
+}
+
+#profileForm input {
+width: 100%;
+padding: 12px;
+margin-bottom: 24px;
+border-radius: 6px;
+border: 1.5px solid #ccc;
+transition: border-color 0.3s;
+font-size: 16px;
+}
+
+.loginFrm input:focus {
+border-color: #27ae60;
+outline: none;
+}
+
+.btn {
+width: 100%;
+padding: 12px;
+font-size: 16px;
+font-weight: 600;
+border: none;
+border-radius: 6px;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+
+.loginBtn {
+background-color: #27ae60;
+color: #fff;
+margin-bottom: 16px;
+}
+
+.loginBtn:hover {
+background-color: #1e8e4b;
+}
+
+.signupTxt {
+text-align: center;
+font-size: 0.95rem;
+color: #555;
+}
+
+.signupTxt a {
+color: #27ae60;
+text-decoration: underline;
+font-weight: 600;
+}
+
+/*dt page*/
+.herodt {
+position: relative;
+background-image: url('images/bannerdonate.png'); 
+background-size: cover;
+background-position: center;
+height: 20vh;
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+color: white;
+}
+
+.herodt::before {
+content: "";
+position: absolute;
+top: 0; left: 0;
+width: 100%; height: 100%;
+background: rgba(0, 0, 0, 0.6);
+}
+
+.herodt h1 {
+position: relative;
+font-size: 3em;
+z-index: 1;
+}
+
+.sectiondt { 
+padding: 3rem 32px; 
+}
+.sectiondt h2 {
+font-size: 32px; 
+margin-bottom: 16px; 
+color: #27ae60;
+  text-align: center; 
+}
+.sectiondt p { 
+max-width: 700px; 
+margin: 0 auto; 
+text-align: center; 
+}
+
+.statistics { 
+display: flex;
+  flex-wrap: wrap;
+  align-items: center; 
+  justify-content: center; 
+  gap: 32px; 
+  max-width: 1000px; 
+  margin: auto; 
+}
+.targetD { 
+flex: 1 1 280px; 
+text-align: left; 
+}
+.targetD h3 { 
+font-size: 32px; 
+color: #27ae60; 
+margin-bottom: .5rem;
+}
+.targetD p { 
+margin-bottom: .5rem;
+}
+.progressBox {
+  flex: 1 1 280px; 
+}
+.containerProgress { 
+background: #ddd; 
+border-radius: 8px;
+  overflow: hidden;
+  height: 30px; }
+.barProgress { 
+background: #27ae60;
+  height: 100%; 
+  width: 65%; 
+  text-align: center; 
+  color: #fff; 
+  font-weight: bold;
+  line-height: 30px; 
+  transition: width .6s ease; }
+.sectiondt-goal {
+background: #f9f9f9;
+}
+
+.helpText {
+margin-top: 16px;
+}
+
+.boxTarget {
+flex: 1 1 280px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.cardTrgt {
+background: linear-gradient(135deg, #1D976C, #93F9B9);
+border-radius: 16px;
+padding: 32px;
+color: white;
+text-align: center;
+width: 100%;
+max-width: 490px;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.cardTrgt h2 {
+margin-bottom: 0.5rem;
+font-size: 24px;
+color: white;
+}
+
+.trgtAmount {
+font-size: 32px;
+font-weight: bold;
+}
+
+.trgtText {
+margin-top: 8px;
+opacity: 0.9;
+}
+
+.sectionDtdiv1 {
+background: linear-gradient(135deg, #1D976C, #93F9B9);
+color: #fff;
+padding-bottom: 4rem;
+}
+
+.sectionDtdiv1 h2 {
+color: #fff;
+}
+
+.divideCards {
+display: grid;
+gap: 32px;
+max-width: 1100px;
+margin: auto;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.carddtbckColor {
+background: #fff;
+border-radius: 12px;
+overflow: hidden;
+box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+color: #333;
+transition: transform 0.3s ease;
+}
+
+.carddtbckColor:hover {
+transform: translateY(-5px);
+}
+
+.carddtImg {
+position: relative;
+width: 100%;
+height: 200px;
+overflow: hidden;
+}
+
+.carddtImg img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+border-radius: 20px;
+}
+
+.wavedt {
+position: absolute;
+bottom: -1px;
+left: 0;
+width: 100%;
+height: 50px;
+display: block;
+}
+
+.carddtInside {
+padding: 1.32px 24px 24px;
+background: #fff;
+border-radius: 0 0 12px 12px;
+text-align: center;
+}
+
+.carddtInside h3 {
+color: #27ae60;
+margin-bottom: 0.5rem;
+}
+
+.achieveSection {
+background: #ffffff;
+text-align: center;
+padding: 4rem 32px;
+}
+
+.achieveSection h2 {
+font-size: 32px;
+margin-bottom: 0.5rem;
+color: #2c3e50;
+}
+
+.goaltitle {
+font-size: 32px;
+margin-bottom: 0.5rem;
+color: #2c3e50;
+text-align: center;
+}
+
+
+.achieveSection .subtitle {
+color: #7f8c8d;
+margin-bottom: 32px;
+font-size: 16px;
+}
+
+.chart-container {
+max-width: 800px;
+margin: auto;
+}
+
+
+.table-wrapper { 
+overflow-x: auto; 
+max-width: 900px; 
+margin: 32px 
+auto 0; 
+border-radius: 20px;
+}
+table {
+  width: 100%; 
+  border: 2px solid lightgreen;
+  border-radius: 20px;
+}
+thead { 
+background: darkgreen; 
+color: #fff; }
+th, td {
+  padding: 12px 16px;
+  text-align: left; }
+
+  
+.herob {
+position: relative;
+background-image: url('images/bannerdonate.png'); 
+background-size: cover;
+background-position: center;
+height: 20vh;
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+color: white;
+}
+
+.herob::before {
+content: "";
+position: absolute;
+top: 0; left: 0;
+width: 100%; height: 100%;
+background: rgba(0, 0, 0, 0.6);
+}
+
+.herob h1 {
+position: relative;
+font-size: 48px;
+z-index: 1;
+}
+
+.lnews {
+max-width: 1000px;
+margin: 40px auto;
+padding: 0 0px;
+}
+
+.lnews h2 {
+font-size: 32px;
+margin-bottom: 20px;
+color: #222;
+text-align: left; 
+}
+
+.carouselb-container {
+overflow: hidden;
+position: relative;
+}
+
+.carouselb-track {
+display: flex;
+gap: 20px;
+overflow-x: auto;
+scroll-behavior: smooth;
+}
+
+.carouselb-track::-webkit-scrollbar {
+display: none;
+}
+
+.newsCardDiv {
+background: #fff;
+border-radius: 10px;
+box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+flex-shrink: 0;
+cursor: grab;
+user-select: none;
+display: flex;
+flex-direction: column;
+overflow: hidden;
+
+width: calc((100% - 20px) / 2);
+min-width: unset; 
+}
+
+@media (max-width: 768px) {
+.newsCardDiv {
+width: 100%; 
+}
+}
+
+.newsCardDiv img {
+width: 100%;
+height: 250px;
+object-fit: cover;
+border-bottom: 1px solid #ddd;
+}
+
+.newsCardDiv h3 {
+font-size: 24px;
+margin: 15px 20px 10px;
+color: #27ae60;
+}
+
+.newsCardDiv p {
+font-size: 16px;
+margin: 0 20px 20px;
+color: #555;
+flex-grow: 1;
+}
+
+.subscribeSection {
+background: #f9f9f9;
+padding: 40px 20px;
+text-align: center;
+border-top: 1px solid #eee;
+}
+
+.subscribeSection h2 {
+font-size: 32px;
+margin-bottom: 10px;
+color: #27ae60;
+}
+
+.subscribeSection p {
+color: #666;
+margin-bottom: 20px;
+}
+
+.subscribeForm {
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+gap: 10px;
+max-width: 500px;
+margin: 0 auto;
+}
+
+.subscribeForm input[type="email"] {
+padding: 12px 15px;
+border: 1px solid #ccc;
+border-radius: 5px;
+flex: 1 1 250px;
+}
+
+.subscribeForm button {
+padding: 12px 20px;
+background-color: #27ae60;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background 0.3s ease;
+}
+
+.subscribeForm button:hover {
+background-color: #219150;
+}
+
+.socialmediaSection {
+text-align: center;
+padding: 40px 20px;
+background-color: #f5f5f5;
+border-top: 1px solid #ddd;
+}
+
+.socialmediaSection h2 {
+font-size: 32px;
+color: #27ae60;
+margin-bottom: 10px;
+}
+
+.socialmediaSection p {
+color: #555;
+margin-bottom: 20px;
+font-size: 16px;
+}
+
+.socialIcons {
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+gap: 15px;
+}
+
+.socialIcons a {
+font-size: 24px;
+color: #27ae60;
+background-color: white;
+border: 2px solid #27ae60;
+padding: 10px;
+border-radius: 50%;
+transition: all 0.3s ease;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+width: 44px;
+height: 44px;
+}
+
+.socialIcons a:hover {
+background-color: #27ae60;
+color: white;
+}
+
+
+.herod {
+position: relative;
+background-image: url('images/bannerdonate.png'); 
+background-size: cover;
+background-position: center;
+height: 20vh;
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+color: white;
+}
+
+.herod::before {
+content: "";
+position: absolute;
+top: 0; left: 0;
+width: 100%; height: 100%;
+background: rgba(0, 0, 0, 0.6);
+}
+
+.herod h1 {
+position: relative;
+font-size: 3em;
+z-index: 1;
+}
+
+.containerd {
+display: flex;
+flex-wrap: wrap;
+padding: 40px 20px;
+max-width: 1200px;
+margin: auto;
+gap: 30px;
+}
+
+.infod, .leftDonation {
+flex: 1 1 400px;
+}
+
+.leftDonation h2 {
+font-size: 32px;
+margin-bottom: 20px;
+color: #333;
+}
+
+.leftDonation p {
+font-size: 16px;
+line-height: 1.6;
+margin-bottom: 20px;
+color: #555;
+}
+
+.leftDonation ul {
+list-style: disc;
+padding-left: 20px;
+color: #444;
+}
+
+.leftDonation li {
+margin-bottom: 10px;
+}
+.formd {
+flex: 1 1 400px;   
+max-width: 480px;   
+background: #f5f5f5;
+padding: 20px;
+border-radius: 10px;
+}
+
+
+.formd h3 {
+margin-bottom: 15px;
+}
+
+.formd label {
+display: block;
+margin: 10px 0 5px;
+}
+
+.formd input[type="text"],
+.formd input[type="email"],
+.formd input[type="number"],
+.formd select {
+width: 100%;
+padding: 8px;
+margin-bottom: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+
+.formd .donationOpts {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+}
+
+.formd .donationOpts button {
+flex: 1 1 30%;
+padding: 10px;
+border: none;
+background: lightgreen;
+color: white;
+border-radius: 5px;
+cursor: pointer;
+}
+
+.formd .donationOpts button.selected {
+background: green;
+}
+
+.formd button[type="submit"] {
+background: green;
+color: white;
+border: none;
+padding: 12px;
+border-radius: 5px;
+width: 100%;
+font-size: 1em;
+cursor: pointer;
+}
+
+
+.donationOpts button {
+flex: 1 1 30%;
+padding: 10px;
+border: none;
+background: lightgreen;
+color: white;
+border-radius: 5px;
+cursor: pointer;
+}
+
+.donationOpts button.selected {
+background: green;
+color: white;
+}
+
+
+
+@media (max-width: 768px) {
+.herod h1 {
+  font-size: 2em;
+}
+
+.containerd {
+  flex-direction: column;
+}
+}
+
+/*tracker page got 2 card*/
+.contentdt {
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+gap: 30px;
+margin: 40px auto;
+max-width: 1000px;
+padding: 0 20px;
+}
+
+.carddt, .progress-carddt {
+background: white;
+border-radius: 15px;
+box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+padding: 30px;
+flex: 1 1 300px;
+min-width: 300px;
+
+}
+
+.carddt h3, .progress-card h3 {
+font-weight: 600;
+color: #27ae60;
+}
+
+.carddt h1 {
+font-size: 36px;
+margin: 15px 0;
+}
+
+.progress-detailsdt {
+font-size: 16px;
+margin: 10px 0;
+}
+
+.barProgressdt {
+background: #eee;
+border-radius: 30px;
+overflow: hidden;
+height: 25px;
+margin-top: 20px;
+}
+
+.progress-filldt {
+background: #2ecc71;
+width: 65%;
+height: 100%;
+text-align: center;
+color: white;
+line-height: 25px;
+font-weight: bold;
+}
+
+footer 
+{ 
+background: #222; 
+color: #ccc;
+text-align: center;
+padding: 24px 32px; 
+}

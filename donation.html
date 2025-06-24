@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+     <link rel="stylesheet" href="style.css">
+
+  <title>Donate Now</title>
+</head>
+
+<body>
+
+  
+<header>
+  <a href="index.html" class="logo">DermaGo</a>
+  <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+  <nav id="nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="donation.html">Donate</a></li>
+      <li><a href="donationtracker.html">Tracker</a></li>
+      <li><a href="blog.html">Blog</a></li>
+<li id="authLink"><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <section class="herod">
+    <h1>Donate Now</h1>
+  </section>
+
+  <section class="containerd">
+     <div class="leftDonation">
+      <h2>Your Contribution Changes Lives</h2>
+      <hr><br>
+      <p>
+        Every donation helps us continue our mission to support the underprivileged, provide education,
+        and bring hope to those in need. Here's what your donation can do:
+      </p>
+      <ul>
+        <li>Provide food and shelter to families in crisis</li>
+        <li>Support education for children in need</li>
+        <li>Deliver medical aid to rural communities</li>
+        <li>Empower women and youth with training and resources</li>
+      </ul>
+      <p>
+        Be the reason someone believes in good people. Thank you for your kindness.
+      </p>
+    </div>
+
+    <div class="formd">
+      <h3>Make a Donation</h3>
+      <form id="donationForm">
+        <label>Donation Type:</label>
+        <select name="donationType">
+          <option value="one-time">One-Time</option>
+          <option value="monthly">Monthly</option>
+        </select>
+
+        <label>Choose Amount:</label>
+        <div class="donationOpts" id="amountBtn">
+          <button type="button" data-amount="10">$10</button>
+          <button type="button" data-amount="25">$25</button>
+          <button type="button" data-amount="50">$50</button>
+        </div>
+
+        <label>Or Enter Custom Amount ($):</label>
+        <input type="number" name="customAmnt" id="customAmnt" min="1" placeholder="Enter amount">
+
+        <label>Email:</label>
+        <input type="email" name="email" required>
+
+        <label>Payment Method:</label>
+        <select name="paymntMtd">
+          <option value="creditCard">Credit Card</option>
+        </select>
+
+        <button type="submit">Donate Now</button>
+        <br><br>
+        Already an user?<a href="login.html" style="color: green; padding: 10px; border-radius: 4px;">Login And Donate Now</a>
+
+      </form>
+    </div>
+  </section>
+
+  <footer>
+  &copy; DermaGo: Web Fundemental Project
+</footer>
+
+
+
+<script>
+  //button for donation form
+  const buttons = document.querySelectorAll(".donationOpts button");
+  const customAmount = document.getElementById("customAmnt");
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      buttons.forEach((b) => b.classList.remove("selected"));
+      btn.classList.add("selected");
+      customAmount.value = btn.dataset.amount;
+    });
+  });
+
+  customAmount.addEventListener("input", () => {
+    buttons.forEach((b) => b.classList.remove("selected"));
+  });
+
+</script>
+<script src="script.js"></script>
+<script src="donationScript.js"></script>
+<script src="fakeAuth.js"></script>
+
+</body>
+</html>

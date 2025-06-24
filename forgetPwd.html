@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Reset Password</title>
+   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body class="login">
+<header>
+  <a href="index.html" class="logo">DermaGo</a>
+  <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+  <nav id="nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="donation.html">Donate</a></li>
+      <li><a href="donationtracker.html">Tracker</a></li>
+      <li><a href="blog.html">Blog</a></li>
+<li id="authLink"><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+<div class="loginDiv">
+  <section class="loginInf" aria-label="Login Features">
+ <h2>Forgot Your Password?</h2>
+    <p>Resetting your password is simple and secure.</p>
+    <ul>
+      <li>Enter your email address in the reset form</li>
+      <li>Check your inbox for a reset link</li>
+      <li>Click the link to open the reset form</li>
+      <li>Create a new password securely</li>
+      <li>Login with your new password</li>
+    </ul>
+
+  </section>
+
+  <section class="loginFrm" aria-label="Login Form">
+    <h2>Reset DermaGo Password</h2>
+    <form id="resetForm">
+      <label for="username">Email</label>
+      <input type="text" id="email" name="email" required autocomplete="email" />
+
+
+      <button type="submit" class="btn loginBtn">Reset Password</button>
+
+      <p class="signupTxt">
+        New user? <a href="signup.html">Sign up</a>
+      </p>
+      <p class="signupTxt">
+        Existing user? <a href="login.html">Login</a>
+      </p>
+    </form>
+    
+  </section>
+
+  
+</div>
+<script src="script.js"></script>
+<script src="userscript.js"></script>
+<script>
+document.getElementById('resetForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  
+  alert('We are still working on reset password feature on server side, very sorry as it is currently available');
+})
+</script>
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const nav = document.getElementById('nav');
+  hamburger.addEventListener('click', () => {
+    nav.classList.toggle('open');
+  });
+</script>
+<footer style="margin-top: 100px;">
+  &copy; DermaGo: Web Fundemental Project
+</footer>
+</body>
+</html>
